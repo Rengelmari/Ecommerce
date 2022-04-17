@@ -1,0 +1,572 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "Simonetta Regular";
+    src: url(./../fonts/Simonetta-Regular.ttf);
+}
+/* vista mobile */
+@media screen and (max-width: 354px){   
+    header{
+        display: flex;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+    .headerLogo{
+        width: 50px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+    .nav__ul__items{
+        display: none;
+    }
+    .inicio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(/assets/img/inicio.jpg);
+        background-position: center;     
+        height: 12rem   
+    }
+    h1{
+        font-size: xx-large;
+        color: black;
+        font-family: "Simonetta Regular";
+        text-align: center;
+    }
+    .coleccion{
+        display: block;
+    }
+    h2{
+        font-size: x-large;
+        color: rgb(9, 52, 13);
+        text-align: center;
+        padding: 1rem;
+    }
+    .subtituloIndex{
+        background-color: rgba(0,0,0, 0.4); 
+        color: black;
+        font-size: x-large;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: "Simonetta Regular";
+        width: 100%;
+    }
+    .ver{
+        text-align: right;
+        color: black;
+        text-decoration: none;
+    }
+    .landscape{
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/landscape.png);
+        background-position: center;
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .productsLandscape{
+        display: none;
+    }
+    .nature{
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/picture.png);
+        background-position: center;
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .productsNature{
+        display: none;
+    }
+    .subtitulo{
+        display: block;
+        height: 30px;
+        font-size: large;
+        color: black;
+        padding-top: 1rem;
+    }
+    .galeria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .cardProduct {
+        width: 260px;
+        margin: 5px;
+    }
+    .cardProduct__image {
+        width: 100%;
+        height: 70%;
+    }
+    .cardProduct__description {
+        padding: 10px;
+        border-bottom: 1px rgb(229, 229, 229);
+        border-left: 1px rgb(229, 229, 229);
+        border-right: 1px rgb(229, 229, 229);
+        border-style: solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .cardProduct__description__price {
+        margin-top: 10px;
+    }
+    .cardProduct__comprar {
+        display: inline-block;
+        text-decoration: none;
+        font-family: "Simonetta Regular";
+        color: black; 
+        font-size: larger;
+    }
+    footer {
+        display: grid; 
+        grid-template-areas:
+        "rrss contacto pago"
+        "rrss contacto pago";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2 auto);
+        background-color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        color: white;
+    }
+    .listaContacto {
+        grid-area: contacto;
+        list-style: none;
+        display: none;
+    }
+    .footer__img {
+      width: 50px;
+      padding: 5px;
+
+    }
+  .redes {
+      grid-area: rrss;
+      display: flex;
+      flex-flow: column;
+      padding-left: 10%;
+      font-size: medium;
+      font-family: 'Simonetta Regular';
+    }
+  .pago {
+      grid-area: pago;
+      align-items: center;
+      display: flex;
+      flex-flow: column;
+      padding-right: 10%;
+      font-size: medium;
+      font-family: 'Simonetta Regular';
+    }
+    .joyeria {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/assets/img/alambrismo.jpg);
+    background-position: center;
+    height: 20rem;
+    align-items: center;
+    justify-content: center;
+    }
+    .miyuki {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/assets/img/miyuki.jpg);
+    background-position: center;
+    height: 20rem;
+    align-items: center;
+    justify-content: center;
+    }
+    .gridFieldset {
+        display: grid;
+        grid-template-areas: 
+        "etiqueta1 etiqueta1"
+        "box1 box1"
+        "etiqueta2 etiqueta2"
+        "box2 box2"
+        "etiqueta3 etiqueta3"
+        "box3 box3"
+        "etiqueta4 etiqueta4"
+        "box4 box4";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(8, 40px);
+    }
+    .etiqueta1 {
+        grid-area: etiqueta1;
+    }
+    .box1 {
+        grid-area: box1;
+        text-align: center;
+    }
+    .etiqueta2 {
+        grid-area: etiqueta2;
+    }
+    .box2 {
+        grid-area: box2;
+        text-align: center;
+    }
+    .etiqueta3 {
+        grid-area: etiqueta3;
+    }
+    .box3 {
+        grid-area: box3;
+        text-align: center;
+    }
+    .etiqueta4 {
+        grid-area: etiqueta4;
+    }
+    .box4 {
+        grid-area: box4;
+        text-align: center;
+    }
+    .boton {
+        display: none;
+    
+    }
+}
+/* vista desktop */
+@media only screen and (min-width: 355px) {
+    .gridContainer {
+        display: grid;
+        grid-template-areas: 
+        "nav nav"
+        "ini ini"
+        "colec colec"
+        "land cardLand"
+        "cardNat nat"
+        "foot foot";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-gap: 20px;
+    }
+    header{
+        grid-area: nav;
+        display: flex;
+        background-color: black;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+    }
+    .headerLogo{
+        width: 70px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+    .nav__ul__items{
+        display: flex;
+        list-style: none;
+    }
+    nav ul a {
+        color: white;
+        font-weight: bold;
+        font-size: large;
+        text-decoration: none;
+        padding: 6px;
+    } 
+    .inicio{
+        grid-area: ini;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(/assets/img/inicio.jpg);
+        background-position: center; 
+        background-size: cover;
+        background-repeat: no-repeat;    
+        height: 12rem   
+    }
+    h1{
+        font-size: xx-large;
+        color: black;
+        font-family: "Simonetta Regular";
+        text-align: center;
+    }
+    .colecTitulo{
+        display: block;
+        grid-area: colec;
+        justify-self: center;
+    }
+    h2{
+        display: inline-flex;
+        font-size: x-large;
+        color: rgb(9, 52, 13);
+        text-align: center;
+        padding: 1rem;
+    }
+    .subtituloIndex{
+        background-color: rgba(0,0,0, 0.4); 
+        color: black;
+        font-size: x-large;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: "Simonetta Regular";
+        width: 100%;
+    }
+    .ver{
+        text-align: right;
+        color: black;
+        text-decoration: none;
+    }
+    .coleccion{
+        display: contents;
+
+    }
+    .landscape{
+        grid-area: land;
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/landscape.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;   
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .productsLandscape{
+        grid-area: cardLand;
+        display: flex;
+        justify-self: center;
+    }
+    .nature{
+        grid-area: nat;
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/picture.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;   
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .productsNature{
+        grid-area: cardNat;
+        display: flex;
+        justify-self: center;
+    }
+    .products {
+        width: 260px;
+        margin: 5px;
+    }
+    .product__image {
+        width: 100%;
+        height: 70%;
+    }
+    .product__description {
+        padding: 10px;
+        border-bottom: 1px rgb(229, 229, 229);
+        border-left: 1px rgb(229, 229, 229);
+        border-right: 1px rgb(229, 229, 229);
+        border-style: solid;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .subTitulo {
+        justify-self: center;
+    }
+    .cardProduct__description__price {
+        margin-top: 10px;
+    }
+    .cardProduct__comprar {
+        display: inline-block;
+        text-decoration: none;
+        font-family: "Simonetta Regular";
+        color: black; 
+        font-size: larger;
+    }
+    footer {
+        grid-area: foot;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        color: white;
+    }
+    .listaContacto {
+        grid-area: contacto;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer__img {
+      width: 50px;
+      padding: 5px;
+
+    }
+  .redes {
+      grid-area: rrss;
+      display: flex;
+      flex-flow: column;
+      padding-left: 10%;
+      font-size: medium;
+      font-family: 'Simonetta Regular';
+    }
+  .pago {
+      grid-area: pago;
+      align-items: center;
+      display: flex;
+      flex-flow: column;
+      padding-right: 10%;
+      font-size: medium;
+      font-family: 'Simonetta Regular';
+    }
+    .galeria {
+        padding-top: 120px;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .cardProduct {
+        width: 260px;
+        margin: 5px;
+    }
+    .cardProduct__image {
+        width: 100%;
+        height: 70%;
+    }
+    .cardProduct__description {
+        padding: 10px;
+        border-bottom: 1px rgb(229, 229, 229);
+        border-left: 1px rgb(229, 229, 229);
+        border-right: 1px rgb(229, 229, 229);
+        border-style: solid;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .cardProduct__description__price {
+        margin-top: 10px;
+    }
+    .cardProduct__comprar {
+        display: inline-block;
+        text-decoration: none;
+        font-family: "Simonetta Regular";
+        color: black; 
+        font-size: larger;
+    }
+    .gridCursos {
+        display: grid;
+        grid-template-areas: 
+        "nav nav"
+        "subt subt"
+        "joy jtext"
+        "mtext miyu"
+        "foot foot";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-gap: 20px;
+    }
+    .cursosTitulo {
+        grid-area: subt;
+    }
+    .cursos {
+        display: contents;
+    }
+    .joyeria {
+        grid-area: joy;
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/alambrismo.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;   
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .joyText {
+        grid-area: jtext;
+        align-self: center;
+        border-left-style: groove;
+        text-align: justify;
+    }   
+    .miyuki {
+        grid-area: miyu;
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/miyuki.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;   
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .miyuText {
+        grid-area: mtext;
+        align-self: center;
+        border-right-style: groove;
+        text-align: justify;
+    }
+    .gridFieldset {
+        padding: 25%;
+        padding-top: 3%;
+        padding-bottom: 5%;
+        display: grid;
+        grid-template-areas:
+        "etiqueta1 box1"
+        "etiqueta2 box2"
+        "etiqueta3 box3"
+        "etiqueta4 etiqueta4"
+        "box4 box4";
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(5, auto);
+        row-gap: 15px;
+    }
+    .etiqueta1 {
+        grid-area: etiqueta1;
+    }
+    .box1 {
+        grid-area: box1;
+    }
+    .etiqueta2 {
+        grid-area: etiqueta2;
+    }
+    .box2 {
+        grid-area: box2;
+    }
+    .etiqueta3 {
+        grid-area: etiqueta3;
+    }
+    .box3 {
+        grid-area: box3;
+ 
+    }
+    .etiqueta4 {
+        grid-area: etiqueta4;
+    }
+    .box4 {
+        grid-area: box4;
+        height: 100px;      
+    }
+    #nombre {
+        width: 100%;
+        border: solid 0.2px;
+    }
+    #mail {
+        width: 100%;
+        border: solid 0.2px;
+    }
+    #consulta {
+        width: 100%;
+        text-align: center;
+        border: solid 0.2px;
+    }
+    .comentario {
+        height: 100%;
+        width: 100%;
+        column-span: all;
+        text-align: justify;
+        border: solid 0.2px;
+    }
+}
