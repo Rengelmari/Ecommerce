@@ -352,22 +352,25 @@
         display: flex;
         justify-self: center;
     }
-    .products:hover {
-        transform-origin: url(../img/earing.png);
-    }
     .products {
         width: 360px;
         margin: 5px;
+        position: relative;
     }
     .product__image {
         width: 100%;
         height: 70%;
+        transition: opacity 1.5s ease-in-out;
+        position: absolute;
     }
+    .product__image.top:hover {
+        opacity: 0;
+    } 
     .product__description {
-        padding: 10px;
-        border-bottom: 1px rgb(229, 229, 229);
-        border-left: 1px rgb(229, 229, 229);
-        border-right: 1px rgb(229, 229, 229);
+        padding-top: 100%;
+        width: 100%;
+        height: 10%;
+        border: 1px rgb(229, 229, 229);
         border-style: solid;
         display: flex;
         justify-content: center;
@@ -482,7 +485,7 @@
         grid-area: joy;
         display: flex;
         flex-direction: column;
-        background-image: url(/assets/img/alambrismo.jpg);
+        background-image: url(../img/alambrismo.jpg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;   
@@ -500,7 +503,7 @@
         grid-area: miyu;
         display: flex;
         flex-direction: column;
-        background-image: url(/assets/img/miyuki.jpg);
+        background-image: url(../img/miyuki.jpg);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;   
