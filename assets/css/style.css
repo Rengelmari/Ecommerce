@@ -6,33 +6,33 @@
     font-family: "Simonetta Regular";
     src: url(./../fonts/Simonetta-Regular.ttf);
 }
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 /* vista mobile */
-@media screen and (max-width: 354px){   
-    header{
-        display: flex;
-        background-color: black;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-    }
+@media screen and (max-width: 576px){   
+
     .headerLogo{
-        width: 50px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-    }
-    .nav__ul__items{
-        display: none;
+    display: none;
     }
     .inicio{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url(/assets/img/inicio.jpg);
+        background-image: url(../img/inicio.png);
         background-position: center;     
         height: 12rem   
     }
-    h1{
+    .titulo{
         font-size: xx-large;
         color: black;
         font-family: "Simonetta Regular";
@@ -41,7 +41,7 @@
     .coleccion{
         display: block;
     }
-    h2{
+    .tema{
         font-size: x-large;
         color: rgb(9, 52, 13);
         text-align: center;
@@ -64,7 +64,7 @@
     .landscape{
         display: flex;
         flex-direction: column;
-        background-image: url(/assets/img/landscape.png);
+        background-image: url(../img/landscape.png);
         background-position: center;
         height: 20rem;
         align-items: center;
@@ -76,7 +76,7 @@
     .nature{
         display: flex;
         flex-direction: column;
-        background-image: url(/assets/img/picture.png);
+        background-image: url(../img/picture.png);
         background-position: center;
         height: 20rem;
         align-items: center;
@@ -145,94 +145,69 @@
         display: none;
     }
     .footer__img {
-      width: 50px;
-      padding: 5px;
-
+        width: 50px;
+        padding: 5px;
     }
   .redes {
-      grid-area: rrss;
-      display: flex;
-      flex-flow: column;
-      padding-left: 10%;
-      font-size: medium;
-      font-family: 'Simonetta Regular';
+        grid-area: rrss;
+        display: flex;
+        flex-flow: column;
+        padding-left: 10%;
+        font-size: medium;
+        font-family: 'Simonetta Regular';
     }
   .pago {
-      grid-area: pago;
-      align-items: center;
-      display: flex;
-      flex-flow: column;
-      padding-right: 10%;
-      font-size: medium;
-      font-family: 'Simonetta Regular';
+        grid-area: pago;
+        align-items: center;
+        display: flex;
+        flex-flow: column;
+        padding-right: 10%;
+        font-size: medium;
+        font-family: 'Simonetta Regular';
     }
     .joyeria {
-    display: flex;
-    flex-direction: column;
-    background-image: url(/assets/img/alambrismo.jpg);
-    background-position: center;
-    height: 20rem;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/alambrismo.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
     }
     .miyuki {
-    display: flex;
-    flex-direction: column;
-    background-image: url(/assets/img/miyuki.jpg);
-    background-position: center;
-    height: 20rem;
-    align-items: center;
-    justify-content: center;
-    }
-    .gridFieldset {
-        display: grid;
-        grid-template-areas: 
-        "etiqueta1 etiqueta1"
-        "box1 box1"
-        "etiqueta2 etiqueta2"
-        "box2 box2"
-        "etiqueta3 etiqueta3"
-        "box3 box3"
-        "etiqueta4 etiqueta4"
-        "box4 box4";
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(8, 40px);
-    }
-    .etiqueta1 {
-        grid-area: etiqueta1;
-    }
-    .box1 {
-        grid-area: box1;
-        text-align: center;
-    }
-    .etiqueta2 {
-        grid-area: etiqueta2;
-    }
-    .box2 {
-        grid-area: box2;
-        text-align: center;
-    }
-    .etiqueta3 {
-        grid-area: etiqueta3;
-    }
-    .box3 {
-        grid-area: box3;
-        text-align: center;
-    }
-    .etiqueta4 {
-        grid-area: etiqueta4;
-    }
-    .box4 {
-        grid-area: box4;
-        text-align: center;
-    }
-    .boton {
-        display: none;
-    
-    }
+        display: flex;
+        flex-direction: column;
+        background-image: url(/assets/img/miyuki.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20rem;
+        align-items: center;
+        justify-content: center;
+    }   
+    .joyText {
+        grid-area: jtext;
+        padding-left: 3%;
+        padding-right: 3%;
+        align-self: center;
+        text-align: justify;
+    }   
+    .miyuText {
+        grid-area: jtext;
+        padding-left: 3%;
+        padding-right: 3%;
+        align-self: center;
+        border-left-style: groove;
+        text-align: justify;
+    }   
 }
 /* vista desktop */
-@media only screen and (min-width: 355px) {
+@media only screen and (min-width: 576px) {
+    .tracking-in-expand {
+        animation: tracking-in-expand 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
     .gridContainer {
         display: grid;
         grid-template-areas: 
@@ -260,17 +235,6 @@
         display: flex;
         flex-direction: row;
     }
-    .nav__ul__items{
-        display: flex;
-        list-style: none;
-    }
-    nav ul a {
-        color: white;
-        font-weight: bold;
-        font-size: large;
-        text-decoration: none;
-        padding: 6px;
-    } 
     .inicio{
         grid-area: ini;
         display: flex;
@@ -282,7 +246,7 @@
         background-repeat: no-repeat;    
         height: 40rem   
     }
-    h1{
+    .titulo{
         font-size: 4rem;
         color: black;
         font-family: "Simonetta Regular";
@@ -293,7 +257,7 @@
         grid-area: colec;
         justify-self: center;
     }
-    h2{
+    .tema{
         display: inline-flex;
         font-size: x-large;
         color: rgb(9, 52, 13);
@@ -316,7 +280,6 @@
     }
     .coleccion{
         display: contents;
-
     }
     .landscape{
         grid-area: land;
@@ -406,9 +369,8 @@
     .footer__img {
       width: 50px;
       padding: 5px;
-
     }
-  .redes {
+    .redes {
       grid-area: rrss;
       display: flex;
       flex-flow: column;
@@ -416,7 +378,10 @@
       font-size: medium;
       font-family: 'Simonetta Regular';
     }
-  .pago {
+    .pieLogos {
+        display: flex;  
+    }
+    .pago {
       grid-area: pago;
       align-items: center;
       display: flex;
@@ -517,65 +482,16 @@
         border-right-style: groove;
         text-align: justify;
     }
-    .gridFieldset {
-        padding: 25%;
-        padding-top: 3%;
-        padding-bottom: 5%;
-        display: grid;
-        grid-template-areas:
-        "etiqueta1 box1"
-        "etiqueta2 box2"
-        "etiqueta3 box3"
-        "etiqueta4 etiqueta4"
-        "box4 box4";
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: repeat(5, auto);
-        row-gap: 15px;
-    }
-    .etiqueta1 {
-        grid-area: etiqueta1;
-    }
-    .box1 {
-        grid-area: box1;
-    }
-    .etiqueta2 {
-        grid-area: etiqueta2;
-    }
-    .box2 {
-        grid-area: box2;
-    }
-    .etiqueta3 {
-        grid-area: etiqueta3;
-    }
-    .box3 {
-        grid-area: box3;
- 
-    }
-    .etiqueta4 {
-        grid-area: etiqueta4;
-    }
-    .box4 {
-        grid-area: box4;
-        height: 100px;      
-    }
-    #nombre {
-        width: 100%;
-        border: solid 0.2px;
-    }
-    #mail {
-        width: 100%;
-        border: solid 0.2px;
-    }
-    #consulta {
-        width: 100%;
-        text-align: center;
-        border: solid 0.2px;
-    }
-    .comentario {
+    .coment {
         height: 100%;
         width: 100%;
         column-span: all;
-        text-align: justify;
-        border: solid 0.2px;
+        padding-bottom: 10%;
+    } 
+    .formulario {
+        padding: 15%;
+        padding-top: 3%;
+        padding-bottom: 5%;
+        margin-right: 0%;
     }
 }

@@ -4,58 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>Contactanos</title>
 </head>
 <body>
     <header>
         <a href="../index.html"><img src="../assets/img/aleciram-logo.png" alt="logo" class="headerLogo"></a>
-    <nav>
-        <ul class="nav__ul__items">
-                <li><a href="../index.html">HOME</a></li>
-                <li><a href="cursos.html">CURSOS</a></li>    
-                <li><a href="contacto.html">CONTACTO</a></li>  
-        </ul>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="../index.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cursos.html">CURSOS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      COLECCIONES
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="nature.html">Nature</a></li>
+                      <li><a class="dropdown-item" href="landscape.html">Landscape</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="contacto.html">CONTACTO</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
    </header>
-        <h2>CONTÁCTANOS</h2>
-        <form action="" class="gridFieldset">       
-            <div class="etiqueta1">
-                <label for="nombre">Nombre</label>
+        <h1 class="tema">CONTÁCTANOS</h1>
+        <form class="row g-3 formulario">
+            <div class="col-md-6">
+              <label for="inputNombre3" class="form-label">Nombre</label>
+              <input type="nombre" class="form-control" id="inputNombre3">
             </div>
-            <div class="box1">
-                <input type="text" id="nombre">
+            <div class="col-md-6">
+              <label for="inputEmail3" class="form-label">Mail</label>
+              <input type="email" class="form-control" id="inputEmail3">
             </div>
-            <div class="etiqueta2">
-                <label for="mail">Mail</label>
-            </div>
-            <div class="box2">
-                <input type="text" id="mail">
-            </div>
-            <div class="etiqueta3">
-                <label for="consulta">Tipo de consulta</label>
-            </div>
-            <div class="box3">
-                <select id="consulta">
-                    <option value="est">Estado de pedido</option>
-                    <option value="con">Consulta</option>
-                    <option value="rec">Reclamo</option>
+            <div class="col-md-6">
+                <label class="inputCons" for="form-label">Tipo de consulta</label>
+                <select class="form-select" id="inputCons">
+                  <option selected>Selecione</option>
+                  <option value="1">Estado de pedido</option>
+                  <option value="2">Consulta</option>
+                  <option value="3">Reclamo</option>
                 </select>
             </div>
-            <div class="etiqueta4">
-                <label for="comentario">Comentario</label>
+            <div class="col-12">
+                <label for="inputComent" class="form-label">Comentario</label>
+                <input type="text" class="form-control coment" id="inputComent">
+              </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-dark">Enviar</button>
             </div>
-            <div class="box4">
-                <input type="text" class="comentario">
-            </div>
-            <div class="boton">
-                <input type="submit" id="enviar" values="Enviar">
-            </div>
-        </form>
+          </form>
     <footer>
         <div class="redes">Redes Sociales
-            <img src="../assets/img/instagram.png"class="footer__img">
-            <img src="../assets/img/pinterest.png"class="footer__img">
+            <div class="pieLogos">
+                <img src="../assets/img/instagram.png"class="footer__img">
+                <img src="../assets/img/pinterest.png"class="footer__img">
+            </div>
         </div>
         <div class="contacto">
             <ul class="listaContacto">
@@ -65,10 +83,13 @@
             </ul>
         </div>
         <div class="pago">Medios de Pago
-            <img src="../assets/img/visa.png"class="footer__img">
-            <img src="../assets/img/mastercard.png"class="footer__img">
-            <img src="../assets/img/mp.jpg"class="footer__img">
+            <div class="pieLogos"> 
+                <img src="../assets/img/visa.png"class="footer__img">
+                <img src="../assets/img/mastercard.png"class="footer__img">
+                <img src="../assets/img/mp.jpg"class="footer__img">
+            </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
