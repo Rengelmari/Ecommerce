@@ -6,6 +6,10 @@
     font-family: "Simonetta Regular";
     src: url(./../fonts/Simonetta-Regular.ttf);
 }
+@font-face {
+    font-family: "Galdeano Regular";
+    src: url(./../fonts/Galdeano-Regular.ttf);
+}
 @keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5em;
@@ -18,19 +22,14 @@
       opacity: 1;
     }
 }
+body {
+    font-family: "Simonetta Regular";
+}
 .tracking-in-expand {
     animation: tracking-in-expand 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 .headerLogo{
     display: none;
-}
-@media screen and (min-width: 576px) {
-    .headerLogo {
-        width: 70px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-    }
 }
 .gridContainer {
     display: grid;
@@ -43,374 +42,344 @@
     "foot foot";
     grid-template-rows: repeat(6, auto);
 }
-@media screen and (min-width: 576px) { 
-.gridContainer {
-    display: grid;
-    grid-template-areas: 
-    "nav nav"
-    "ini ini"
-    "colec colec"
-    "land cardLand"
-    "cardNat nat"
-    "foot foot";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, auto);
-    grid-gap: 1%;
-    } 
-} 
-    header{
-        grid-area: nav;
-        display: block;
-        background-color: black;
-        justify-content: start;
-        align-items: center;
+header{
+    grid-area: nav;
+    display: block;
+    background-color: black;
+    justify-content: start;
+    align-items: center;
     }
-    @media screen and (min-width: 576px) { 
-        header{
-            justify-content: space-around;
-            display: flex;
-        }
-    }
-    .inicio{
-        grid-area: ini;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url(../img/inicio.png);
-        background-position: center; 
-        background-size: cover;
-        background-repeat: no-repeat;    
-        height: 25rem   
-    }
-    @media screen and (min-width: 576px) { 
-    .inicio{
-        height: 40rem   
-    }
+.inicio{
+    grid-area: ini;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/inicio.png);
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;    
+    height: 25rem   
 }
 .titulo{
     font-size: xx-large;
     color: black;
-    font-family: "Simonetta Regular";
     text-align: center;
 }
-@media screen and (min-width: 576px) { 
+.colecTitulo{
+    display: block;
+    grid-area: colec;
+    justify-self: center;
+    align-self: center;
+}
+.tituloPagina {
+    display: inline-flex;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(9, 52, 13);
+    text-align: center;
+    padding: 5%;
+
+}
+.subtituloIndex{
+    background-color: rgba(0,0,0, 0.4); 
+    color: black;
+    font-size: xx-large;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+}
+.ver{
+    text-align: right;
+    color: black;
+    text-decoration: none;
+}
+.coleccion{
+    display: contents;
+    }
+.coleccion__landscape{
+    grid-area: land;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/landscape.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.productsLandscape {
+    display: none;
+    }
+.coleccion__nature{
+    grid-area: nat;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/picture.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.productsNature {
+    display: none;
+    }
+.products {
+    width: 370px;
+    height: 500px;
+    margin: 5px;
+    position: relative;
+}
+.product__image {
+    width: 100%;
+    height: 70%;
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;
+}
+.product__image.top:hover {
+    opacity: 0;
+    } 
+.product__description {
+    display: none;
+}
+footer {
+    grid-area: foot;
+    display: grid; 
+    grid-template-areas:
+    "rrss contacto pago"
+    "rrss contacto pago";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2 auto);
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    color: white;
+}
+.listaContacto {
+    grid-area: contacto;
+    list-style: none;
+    display: none;
+}
+.footer__img {
+    width: 50px;
+    padding: 5px;
+}
+.redes {
+    grid-area: rrss;
+    display: flex;
+    flex-flow: column;
+    padding-left: 10%;
+    font-size: medium;
+}
+.pago {
+    grid-area: pago;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    padding-right: 10%;
+    font-size: medium;
+}
+.galeria {
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(255, 255, 255);
+}
+.cardProduct {
+    width: 260px;
+    margin: 5px;
+    overflow: hidden;
+}
+.cardProduct__image {
+    width: 100%;
+    height: 70%;
+}
+.cardAnimation:hover {
+    transform: scale(1.5);
+}
+.cardProduct__description {
+    padding: 10px;
+    border-bottom: 1px rgb(229, 229, 229);
+    border-left: 1px rgb(229, 229, 229);
+    border-right: 1px rgb(229, 229, 229);
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.cardProduct__description__price {
+    margin-top: 10px;
+    }
+.cardProduct__comprar {
+    display: inline-block;
+    text-decoration: none;
+    color: black; 
+    font-size: larger;
+}
+.gridCursos {
+    display: grid;
+    grid-template-areas: 
+    "nav nav"
+    "subt subt"
+    "joy joy"
+    "miyu miyu"
+    "foot foot";
+    grid-template-rows: auto auto 30rem 30rem auto;
+    grid-gap: 1%;
+}
+.cursosTitulo {
+    grid-area: subt;
+}
+.cursos {
+    display: contents;
+}
+.curso__joyeria {
+    grid-area: joy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.descr__mobile {
+    position: relative;
+    display: contents;
+}
+.joyeria__descr {
+    display: none;
+} 
+.curso__miyuki {
+    grid-area: miyu;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.miyuki__descr {
+    display: none;
+}
+.coment {
+    height: 100%;
+    column-span: all;
+    padding-bottom: 10%;
+} 
+.formulario {
+    padding: 15%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    margin-right: 0%;
+} 
+form {
+    font-family: "Galdeano Regular";
+}
+@media screen and (min-width: 576px) {
+    .headerLogo {
+        width: 70px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+    .gridContainer {
+        display: grid;
+        grid-template-areas: 
+        "nav nav"
+        "ini ini"
+        "colec colec"
+        "land cardLand"
+        "cardNat nat"
+        "foot foot";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-gap: 1%;
+    } 
+    header{
+        justify-content: space-around;
+        display: flex;
+    }
+    .inicio{
+        height: 40rem   
+    }
     .titulo{
         font-size: 4rem;
     }
-}
-    .colecTitulo{
-        display: block;
-        grid-area: colec;
-        justify-self: center;
-        align-self: center;
-    }
-    .tema{
-        display: inline-flex;
-        font-size: x-large;
-        font-weight: bold;
-        font-family: "Simonetta Regular";
-        color: rgb(9, 52, 13);
-        text-align: center;
-        padding-bottom: 5%;
-    }
-    @media screen and (min-width: 576px) {
-        .tema{
-            padding: 1rem;
-        }    
-    }
-    .subtituloIndex{
-        background-color: rgba(0,0,0, 0.4); 
-        color: black;
-        font-size: xx-large;
-        text-decoration: none;
-        font-weight: bold;
-        font-family: "Simonetta Regular";
-        width: 100%;
-    }
-    .ver{
-        text-align: right;
-        color: black;
-        text-decoration: none;
-    }
-    .coleccion{
-        display: contents;
-    }
-    .landscape{
-        grid-area: land;
-        display: flex;
-        flex-direction: column;
-        background-image: url(../img/landscape.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;   
-        height: 30rem;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5%;
-    }
-    @media screen and (min-width: 576px) {
-        .landscape{
-            margin-bottom: 0%;
-        }
-    }
-    .productsLandscape {
-        display: none;
-    }
-    @media screen and (min-width: 576px)  {
-        .productsLandscape{
-            grid-area: cardLand;
-            display: flex;
-            justify-self: center;
-        }
-    }
-    .nature{
-        grid-area: nat;
-        display: flex;
-        flex-direction: column;
-        background-image: url(../img/picture.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;   
-        height: 30rem;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5%;
-    }
-    @media screen and (min-width: 576px) {
-        .nature{
-            margin-bottom: 0;
-        }
-    }
-    .productsNature {
-        display: none;
-    }
-    @media screen and (min-width: 576px)  {
-        .productsNature{
-            grid-area: cardNat;
-            display: flex;
-            justify-self: center;
-        }
-    }
-    .products {
-        width: 360px;
-        margin: 5px;
-        position: relative;
-    }
-    .product__image {
-        width: 100%;
-        height: 70%;
-        transition: opacity 1.5s ease-in-out;
-        position: absolute;
-    }
-    .product__image.top:hover {
-        opacity: 0;
+    .tituloPagina{
+        padding: 1rem;
     } 
-    .product__description {
-        display: none;
+    .coleccion__landscape{
+        margin-bottom: 0%;
     }
-    @media screen and (min-width: 576px) {
+    .productsLandscape{
+        grid-area: cardLand;
+        display: flex;
+        justify-self: center;
+    }
+    .collecion__nature{
+        margin-bottom: 0;
+    }
+    .productsNature{
+        grid-area: cardNat;
+        display: flex;
+        justify-self: center;
+    }
     .product__description {
         padding-top: 100%;
         width: 100%;
         height: 10%;
-        border: 1px rgb(229, 229, 229);
-        border-style: solid;
+        font-size: xx-large;
         display: flex;
         justify-content: center;
         align-items: baseline;
     }
-}
-    .subTitulo {
-        justify-self: center;
-    }
-    footer {
-        grid-area: foot;
-        display: grid; 
-        grid-template-areas:
-        "rrss contacto pago"
-        "rrss contacto pago";
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: repeat(2 auto);
-        background-color: black;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding-top: 10px;
-        color: white;
-    }
     .listaContacto {
-        grid-area: contacto;
-        list-style: none;
-        display: none;
-    }
-    @media screen and (min-width: 576px) {
-        .listaContacto {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    .footer__img {
-        width: 50px;
-        padding: 5px;
-    }
-  .redes {
-        grid-area: rrss;
         display: flex;
-        flex-flow: column;
-        padding-left: 10%;
-        font-size: medium;
-        font-family: 'Simonetta Regular';
-    }
-  .pago {
-        grid-area: pago;
-        align-items: center;
-        display: flex;
-        flex-flow: column;
-        padding-right: 10%;
-        font-size: medium;
-        font-family: 'Simonetta Regular';
-    }
-    .galeria {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        background-color: rgb(255, 255, 255);
-    }
-    .cardProduct {
-        width: 260px;
-        margin: 5px;
-    }
-    .cardProduct__image {
-        width: 100%;
-        height: 70%;
-    }
-    @media screen and (min-width: 576px) {
-        .cardProduct:hover {
-            transform: scale(1.3);
-        }
-    }
-    .cardProduct__description {
-        padding: 10px;
-        border-bottom: 1px rgb(229, 229, 229);
-        border-left: 1px rgb(229, 229, 229);
-        border-right: 1px rgb(229, 229, 229);
-        border-style: solid;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-    }
-    .cardProduct__description__price {
-        margin-top: 10px;
-    }
-    .cardProduct__comprar {
-        display: inline-block;
-        text-decoration: none;
-        font-family: "Simonetta Regular";
-        color: black; 
-        font-size: larger;
+        flex-direction: column;
     }
     .gridCursos {
-        display: grid;
         grid-template-areas: 
         "nav nav"
         "subt subt"
-        "joy joy"
-        "miyu miyu"
+        "joy jtext"
+        "mtext miyu"
         "foot foot";
-        grid-template-rows: auto auto 30rem 30rem auto;
-        grid-gap: 1%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
     }
-     @media screen and (min-width: 576px) {
-        .gridCursos {
-            grid-template-areas: 
-            "nav nav"
-            "subt subt"
-            "joy jtext"
-            "mtext miyu"
-            "foot foot";
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(5, auto);
-        }
-    } 
-    .cursosTitulo {
-        grid-area: subt;
+    .curso__joyeria {
+        background-image: url(../img/alambrismo.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 20rem;
     }
-    .cursos {
-        display: contents;
-    }
-    .joyeria {
-        grid-area: joy;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    @media screen and (min-width: 576px) {
-        .joyeria {
-            background-image: url(../img/alambrismo.jpg);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat; 
-            height: 20rem;
-        }
-    }
-    .cursoDescr {
-        position: relative;
-        display: contents;
-    }
-    @media screen and (min-width: 576px) {
-        .cursoDescr {
-            display: none;
-        }
-    }
-    .joyText {
+    .descr__mobile {
         display: none;
     }
-    @media screen and (min-width: 576px) {
-    .joyText {
+    .joyeria__descr {
         grid-area: jtext;
         display: block;
         align-self: center;
         border-left-style: groove;
         text-align: justify;
-    }   
-    }   
-    .miyuki {
-        grid-area: miyu;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
-    @media screen and (min-width: 576px) {
-        .miyuki {
-            background-image: url(../img/miyuki.jpg);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat; 
-            height: 20rem;
-        }
+    .curso__miyuki {
+        background-image: url(../img/miyuki.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 20rem;
     }
-    .miyuText {
-        display: none;
-    }
-    @media screen and (min-width: 576px) {
-    .miyuText {
+    .miyuki__descr {
         grid-area: mtext;
         display: block;
         align-self: center;
         border-right-style: groove;
         text-align: justify;
     }
-    }
-    .coment {
-        height: 100%;
-        column-span: all;
-        padding-bottom: 10%;
-    } 
-    .formulario {
-        padding: 15%;
-        padding-top: 3%;
-        padding-bottom: 5%;
-        margin-right: 0%;
-    } 
+}
