@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "Simonetta Regular";
+    src: url(./../fonts/Simonetta-Regular.ttf);
+}
+@font-face {
+    font-family: "Galdeano Regular";
+    src: url(./../fonts/Galdeano-Regular.ttf);
+}
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+$font-tittle: "Simonetta regular";
+$font-content: "Galdeano Regular";
+$color-background: rgb(0, 0, 0);
+$color-tittle: rgb(9, 52, 13);
+$card-border: 1.5px rgb(229, 229, 229);
+
+body {
+    font-family: $font-tittle;
+}
+.tracking-in-expand {
+    animation: tracking-in-expand 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.headerLogo{
+    display: none;
+}
+.gridContainer {
+    display: grid;
+    grid-template-areas: 
+    "nav nav"
+    "ini ini"
+    "colec colec"
+    "land land"
+    "nat nat"
+    "foot foot";
+    grid-template-rows: repeat(6, auto);
+}
+header{
+    grid-area: nav;
+    display: block;
+    background-color: $color-background;
+    justify-content: start;
+    align-items: center;
+    }
+.inicio{
+    grid-area: ini;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/inicio.png);
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;    
+    height: 25rem   
+}
+.titulo{
+    font-size: xx-large;
+    color: black;
+    text-align: center;
+}
+.colecTitulo{
+    display: block;
+    grid-area: colec;
+    justify-self: center;
+    align-self: center;
+}
+.tituloPagina {
+    display: inline-flex;
+    font-size: x-large;
+    font-weight: bold;
+    color: $color-tittle;
+    text-align: center;
+    padding: 5%;
+
+}
+div {
+    strong{
+        font-family: $font-content;
+    }
+}
+.subtituloIndex{
+    background-color: rgba(0,0,0, 0.4); 
+    color: black;
+    font-size: xx-large;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+}
+.ver{
+    text-align: right;
+    color: black;
+    text-decoration: none;
+}
+.coleccion{
+    display: contents;
+    }
+.coleccion__landscape{
+    grid-area: land;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/landscape.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.productsLandscape {
+    display: none;
+    }
+.coleccion__nature{
+    grid-area: nat;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/picture.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.productsNature {
+    display: none;
+    }
+.products {
+    width: 370px;
+    height: 500px;
+    margin: 5px;
+    position: relative;
+}
+.product__image {
+    width: 100%;
+    height: 70%;
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;
+
+&.top:hover {
+    opacity: 0;
+    } 
+}
+.product__description {
+    display: none;
+}
+footer {
+    grid-area: foot;
+    display: grid; 
+    grid-template-areas:
+    "rrss contacto pago"
+    "rrss contacto pago";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2 auto);
+    background-color: $color-background;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    color: white;
+}
+.listaContacto {
+    grid-area: contacto;
+    list-style: none;
+    display: none;
+}
+.footer__img {
+    width: 50px;
+    padding: 5px;
+}
+.redes {
+    grid-area: rrss;
+    display: flex;
+    flex-flow: column;
+    padding-left: 10%;
+    font-size: medium;
+}
+.pago {
+    grid-area: pago;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    padding-right: 10%;
+    font-size: medium;
+}
+.galeria {
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.cardProduct {
+    width: 260px;
+    margin: 5px;
+    overflow: hidden;
+}
+.cardProduct__image {
+    width: 100%;
+    height: 70%;
+}
+.cardAnimation:hover {
+    transform: scale(1.5);
+}
+.cardProduct__description {
+    padding: 10px;
+    border-bottom: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.cardProduct__description__price {
+    margin-top: 10px;
+    }
+.cardProduct__comprar {
+    display: inline-block;
+    text-decoration: none;
+    color: black; 
+    font-size: larger;
+    font-family: $font-content;
+}
+.gridCursos {
+    display: grid;
+    grid-template-areas: 
+    "nav nav"
+    "subt subt"
+    "joy joy"
+    "miyu miyu"
+    "foot foot";
+    grid-template-rows: auto auto 30rem 30rem auto;
+    grid-gap: 1%;
+}
+.cursosTitulo {
+    grid-area: subt;
+}
+.cursos {
+    display: contents;
+}
+.curso__joyeria {
+    grid-area: joy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.descr__mobile {
+    position: relative;
+    display: contents;
+}
+.joyeria__descr {
+    display: none;
+} 
+.curso__miyuki {
+    grid-area: miyu;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.miyuki__descr {
+    display: none;
+}
+.coment {
+    height: 100%;
+    column-span: all;
+    padding-bottom: 10%;
+} 
+.formulario {
+    padding: 15%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    margin-right: 0%;
+} 
+form {
+    font-family: $font-content;
+}
+@media screen and (min-width: 576px) {
+    .headerLogo {
+        width: 70px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+    .gridContainer {
+        display: grid;
+        grid-template-areas: 
+        "nav nav"
+        "ini ini"
+        "colec colec"
+        "land cardLand"
+        "cardNat nat"
+        "foot foot";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-gap: 1%;
+    } 
+    header{
+        justify-content: space-around;
+        display: flex;
+    }
+    .inicio{
+        height: 40rem   
+    }
+    .titulo{
+        font-size: 4rem;
+    }
+    .tituloPagina{
+        padding: 1rem;
+    } 
+    .coleccion__landscape{
+        margin-bottom: 0%;
+    }
+    .productsLandscape{
+        grid-area: cardLand;
+        display: flex;
+        justify-self: center;
+    }
+    .collecion__nature{
+        margin-bottom: 0;
+    }
+    .productsNature{
+        grid-area: cardNat;
+        display: flex;
+        justify-self: center;
+    }
+    .product__description {
+        padding-top: 100%;
+        width: 100%;
+        height: 10%;
+        font-size: xx-large;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .listaContacto {
+        display: flex;
+        flex-direction: column;
+    }
+    .gridCursos {
+        grid-template-areas: 
+        "nav nav"
+        "subt subt"
+        "joy jtext"
+        "mtext miyu"
+        "foot foot";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, auto);
+    }
+    .curso__joyeria {
+        background-image: url(../img/alambrismo.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 20rem;
+    }
+    .descr__mobile {
+        display: none;
+    }
+    .joyeria__descr {
+        grid-area: jtext;
+        display: block;
+        align-self: center;
+        border-left-style: groove;
+        text-align: justify;
+        font-family: $font-content;
+    }
+    .curso__miyuki {
+        background-image: url(../img/miyuki.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 20rem;
+    }
+    .miyuki__descr {
+        grid-area: mtext;
+        display: block;
+        align-self: center;
+        border-right-style: groove;
+        text-align: justify;
+        font-family: $font-content;
+    }
+}
