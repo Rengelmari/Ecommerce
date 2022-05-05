@@ -2,14 +2,9 @@
     margin: 0;
     padding: 0;
 }
-@font-face {
-    font-family: "Simonetta Regular";
-    src: url(./../fonts/Simonetta-Regular.ttf);
-}
-@font-face {
-    font-family: "Galdeano Regular";
-    src: url(./../fonts/Galdeano-Regular.ttf);
-}
+@import "./footer";
+@import "./variables";
+
 @keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5em;
@@ -22,12 +17,6 @@
       opacity: 1;
     }
 }
-$font-tittle: "Simonetta regular";
-$font-content: "Galdeano Regular";
-$color-background: rgb(0, 0, 0);
-$color-tittle: rgb(9, 52, 13);
-$card-border: 1.5px rgb(229, 229, 229);
-
 body {
     font-family: $font-tittle;
 }
@@ -124,17 +113,9 @@ div {
     display: none;
     }
 .coleccion__nature{
+    @extend .coleccion__landscape;
     grid-area: nat;
-    display: flex;
-    flex-direction: column;
     background-image: url(../img/picture.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;   
-    height: 30rem;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5%;
 }
 .productsNature {
     display: none;
@@ -158,45 +139,7 @@ div {
 .product__description {
     display: none;
 }
-footer {
-    grid-area: foot;
-    display: grid; 
-    grid-template-areas:
-    "rrss contacto pago"
-    "rrss contacto pago";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(2 auto);
-    background-color: $color-background;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    color: white;
-}
-.listaContacto {
-    grid-area: contacto;
-    list-style: none;
-    display: none;
-}
-.footer__img {
-    width: 50px;
-    padding: 5px;
-}
-.redes {
-    grid-area: rrss;
-    display: flex;
-    flex-flow: column;
-    padding-left: 10%;
-    font-size: medium;
-}
-.pago {
-    grid-area: pago;
-    align-items: center;
-    display: flex;
-    flex-flow: column;
-    padding-right: 10%;
-    font-size: medium;
-}
+
 .galeria {
     margin-left: 3%;
     margin-right: 3%;
@@ -268,11 +211,8 @@ footer {
     display: none;
 } 
 .curso__miyuki {
+    @extend .curso__joyeria;
     grid-area: miyu;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 .miyuki__descr {
     display: none;
@@ -292,6 +232,24 @@ form {
     font-family: $font-content;
 }
 @media screen and (min-width: 576px) {
+    @mixin prodColections ($display, $justify-self) {
+        display: $display;
+        justify-self: $justify-self;
+    }
+
+    @mixin cursosImage ($position, $size, $repeat, $height) {
+        background-position: $position;
+        background-size: $size;
+        background-repeat: $repeat;
+        height: $height;
+    }
+
+    @mixin cursosDesc ($display, $align, $text-align) {
+        display: $display;
+        align-self: $align;
+        text-align: $text-align;
+    }
+
     .headerLogo {
         width: 70px;
         cursor: pointer;
@@ -329,16 +287,14 @@ form {
     }
     .productsLandscape{
         grid-area: cardLand;
-        display: flex;
-        justify-self: center;
+        @include prodColections(flex, center);
     }
     .collecion__nature{
         margin-bottom: 0;
     }
     .productsNature{
         grid-area: cardNat;
-        display: flex;
-        justify-self: center;
+        @include prodColections(flex, center);
     }
     .product__description {
         padding-top: 100%;
@@ -348,10 +304,6 @@ form {
         display: flex;
         justify-content: center;
         align-items: baseline;
-    }
-    .listaContacto {
-        display: flex;
-        flex-direction: column;
     }
     .gridCursos {
         grid-template-areas: 
@@ -365,35 +317,25 @@ form {
     }
     .curso__joyeria {
         background-image: url(../img/alambrismo.jpg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat; 
-        height: 20rem;
+        @include cursosImage (center, cover, no-repeat, 20rem);
     }
     .descr__mobile {
         display: none;
     }
     .joyeria__descr {
         grid-area: jtext;
-        display: block;
-        align-self: center;
+        @include cursosDesc (block, center, justify);
         border-left-style: groove;
-        text-align: justify;
         font-family: $font-content;
     }
     .curso__miyuki {
         background-image: url(../img/miyuki.jpg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat; 
-        height: 20rem;
+        @include cursosImage (center, cover, no-repeat, 20rem);
     }
     .miyuki__descr {
         grid-area: mtext;
-        display: block;
-        align-self: center;
+        @include cursosDesc (block, center, justify);
         border-right-style: groove;
-        text-align: justify;
-        font-family: $font-content;
+        font-family: $font-content; 
     }
 }

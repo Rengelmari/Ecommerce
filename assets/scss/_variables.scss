@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Simonetta Regular";
+    src: url(./../fonts/Simonetta-Regular.ttf);
+}
+@font-face {
+    font-family: "Galdeano Regular";
+    src: url(./../fonts/Galdeano-Regular.ttf);
+}
+
+$font-tittle: "Simonetta regular";
+$font-content: "Galdeano Regular";
+$color-background: rgb(0, 0, 0);
+$color-tittle: rgb(9, 52, 13);
+$card-border: 1.5px rgb(229, 229, 229);

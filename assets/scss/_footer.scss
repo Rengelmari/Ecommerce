@@ -1,0 +1,30 @@
+@import "./variables";
+$iconos: (
+    Instagram: yellow,
+    Facebook: rgb(0, 0, 255),
+    Pinterest: rgb(184, 3, 3),
+    Whatsapp: rgb(3, 194, 3)
+ );
+
+@each $yellow, $color in $iconos {
+    .boton#{$yellow}:hover {
+        fill:$color
+    }
+}
+footer {
+    grid-area: foot;
+    background-color: $color-background;
+    width: 100%;
+    display: flex;
+}
+.footer__icon {
+    height: 35px;   
+    width: 35px;    
+
+}
+.redes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    fill: white;
+}

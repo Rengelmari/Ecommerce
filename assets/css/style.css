@@ -10,6 +10,42 @@
   font-family: "Galdeano Regular";
   src: url(./../fonts/Galdeano-Regular.ttf); }
 
+.botonInstagram:hover {
+  fill: yellow; }
+
+.botonFacebook:hover {
+  fill: blue; }
+
+.botonPinterest:hover {
+  fill: #b80303; }
+
+.botonWhatsapp:hover {
+  fill: #03c203; }
+
+footer {
+  grid-area: foot;
+  background-color: black;
+  width: 100%;
+  display: flex; }
+
+.footer__icon {
+  height: 35px;
+  width: 35px; }
+
+.redes {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  fill: white; }
+
+@font-face {
+  font-family: "Simonetta Regular";
+  src: url(./../fonts/Simonetta-Regular.ttf); }
+
+@font-face {
+  font-family: "Galdeano Regular";
+  src: url(./../fonts/Galdeano-Regular.ttf); }
+
 @keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;
@@ -89,7 +125,7 @@ div strong {
 .coleccion {
   display: contents; }
 
-.coleccion__landscape {
+.coleccion__landscape, .coleccion__nature {
   grid-area: land;
   display: flex;
   flex-direction: column;
@@ -107,16 +143,7 @@ div strong {
 
 .coleccion__nature {
   grid-area: nat;
-  display: flex;
-  flex-direction: column;
-  background-image: url(../img/picture.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 30rem;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5%; }
+  background-image: url(../img/picture.png); }
 
 .productsNature {
   display: none; }
@@ -137,43 +164,6 @@ div strong {
 
 .product__description {
   display: none; }
-
-footer {
-  grid-area: foot;
-  display: grid;
-  grid-template-areas: "rrss contacto pago" "rrss contacto pago";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(2 auto);
-  background-color: black;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  color: white; }
-
-.listaContacto {
-  grid-area: contacto;
-  list-style: none;
-  display: none; }
-
-.footer__img {
-  width: 50px;
-  padding: 5px; }
-
-.redes {
-  grid-area: rrss;
-  display: flex;
-  flex-flow: column;
-  padding-left: 10%;
-  font-size: medium; }
-
-.pago {
-  grid-area: pago;
-  align-items: center;
-  display: flex;
-  flex-flow: column;
-  padding-right: 10%;
-  font-size: medium; }
 
 .galeria {
   margin-left: 3%;
@@ -226,7 +216,7 @@ footer {
 .cursos {
   display: contents; }
 
-.curso__joyeria {
+.curso__joyeria, .curso__miyuki {
   grid-area: joy;
   display: flex;
   flex-direction: column;
@@ -241,11 +231,7 @@ footer {
   display: none; }
 
 .curso__miyuki {
-  grid-area: miyu;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
+  grid-area: miyu; }
 
 .miyuki__descr {
   display: none; }
@@ -285,7 +271,7 @@ form {
     font-size: 4rem; }
   .tituloPagina {
     padding: 1rem; }
-  .coleccion__landscape {
+  .coleccion__landscape, .coleccion__nature {
     margin-bottom: 0%; }
   .productsLandscape {
     grid-area: cardLand;
@@ -305,14 +291,11 @@ form {
     display: flex;
     justify-content: center;
     align-items: baseline; }
-  .listaContacto {
-    display: flex;
-    flex-direction: column; }
   .gridCursos {
     grid-template-areas: "nav nav" "subt subt" "joy jtext" "mtext miyu" "foot foot";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, auto); }
-  .curso__joyeria {
+  .curso__joyeria, .curso__miyuki {
     background-image: url(../img/alambrismo.jpg);
     background-position: center;
     background-size: cover;
@@ -324,8 +307,8 @@ form {
     grid-area: jtext;
     display: block;
     align-self: center;
-    border-left-style: groove;
     text-align: justify;
+    border-left-style: groove;
     font-family: "Galdeano Regular"; }
   .curso__miyuki {
     background-image: url(../img/miyuki.jpg);
@@ -337,6 +320,6 @@ form {
     grid-area: mtext;
     display: block;
     align-self: center;
-    border-right-style: groove;
     text-align: justify;
+    border-right-style: groove;
     font-family: "Galdeano Regular"; } }
