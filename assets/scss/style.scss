@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+@import "./header";
 @import "./footer";
 @import "./variables";
 
@@ -23,9 +24,7 @@ body {
 .tracking-in-expand {
     animation: tracking-in-expand 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
-.headerLogo{
-    display: none;
-}
+
 .gridContainer {
     display: grid;
     grid-template-areas: 
@@ -37,13 +36,6 @@ body {
     "foot foot";
     grid-template-rows: repeat(6, auto);
 }
-header{
-    grid-area: nav;
-    display: block;
-    background-color: $color-background;
-    justify-content: start;
-    align-items: center;
-    }
 .inicio{
     grid-area: ini;
     display: flex;
@@ -150,14 +142,19 @@ div {
 .cardProduct {
     width: 260px;
     margin: 5px;
-    overflow: hidden;
 }
 .cardProduct__image {
-    width: 100%;
-    height: 70%;
+    width: 260px;
+    height: 270px;
+    overflow: hidden;
 }
-.cardAnimation:hover {
-    transform: scale(1.5);
+.cardAnimation {
+    width: 100%;
+    height: 100%;
+    transition: ease-in-out 1.5s;
+    &:hover {
+        transform: scale(1.2) translateY(-20px);
+    } 
 }
 .cardProduct__description {
     padding: 10px;
@@ -250,12 +247,6 @@ form {
         text-align: $text-align;
     }
 
-    .headerLogo {
-        width: 70px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-    }
     .gridContainer {
         display: grid;
         grid-template-areas: 
@@ -269,10 +260,6 @@ form {
         grid-template-rows: repeat(6, auto);
         grid-gap: 1%;
     } 
-    header{
-        justify-content: space-around;
-        display: flex;
-    }
     .inicio{
         height: 40rem   
     }

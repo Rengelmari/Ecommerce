@@ -10,6 +10,42 @@
   font-family: "Galdeano Regular";
   src: url(./../fonts/Galdeano-Regular.ttf); }
 
+.headerLogo {
+  display: none; }
+
+header {
+  grid-area: nav;
+  display: flex;
+  background-color: black;
+  justify-content: start;
+  align-items: center; }
+
+.carrito {
+  fill: white;
+  width: 50px;
+  height: 18px;
+  margin-left: 27rem; }
+
+@media screen and (min-width: 576px) {
+  .headerLogo {
+    width: 70px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row; }
+  header {
+    justify-content: space-around;
+    display: flex; }
+  .carrito {
+    margin-left: 0rem; } }
+
+@font-face {
+  font-family: "Simonetta Regular";
+  src: url(./../fonts/Simonetta-Regular.ttf); }
+
+@font-face {
+  font-family: "Galdeano Regular";
+  src: url(./../fonts/Galdeano-Regular.ttf); }
+
 .botonInstagram:hover {
   fill: yellow; }
 
@@ -61,20 +97,10 @@ body {
 .tracking-in-expand {
   animation: tracking-in-expand 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
 
-.headerLogo {
-  display: none; }
-
 .gridContainer {
   display: grid;
   grid-template-areas: "nav nav" "ini ini" "colec colec" "land land" "nat nat" "foot foot";
   grid-template-rows: repeat(6, auto); }
-
-header {
-  grid-area: nav;
-  display: block;
-  background-color: black;
-  justify-content: start;
-  align-items: center; }
 
 .inicio {
   grid-area: ini;
@@ -174,15 +200,19 @@ div strong {
 
 .cardProduct {
   width: 260px;
-  margin: 5px;
-  overflow: hidden; }
+  margin: 5px; }
 
 .cardProduct__image {
-  width: 100%;
-  height: 70%; }
+  width: 260px;
+  height: 270px;
+  overflow: hidden; }
 
-.cardAnimation:hover {
-  transform: scale(1.5); }
+.cardAnimation {
+  width: 100%;
+  height: 100%;
+  transition: ease-in-out 1.5s; }
+  .cardAnimation:hover {
+    transform: scale(1.2) translateY(-20px); }
 
 .cardProduct__description {
   padding: 10px;
@@ -251,20 +281,12 @@ form {
   font-family: "Galdeano Regular"; }
 
 @media screen and (min-width: 576px) {
-  .headerLogo {
-    width: 70px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row; }
   .gridContainer {
     display: grid;
     grid-template-areas: "nav nav" "ini ini" "colec colec" "land cardLand" "cardNat nat" "foot foot";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, auto);
     grid-gap: 1%; }
-  header {
-    justify-content: space-around;
-    display: flex; }
   .inicio {
     height: 40rem; }
   .titulo {

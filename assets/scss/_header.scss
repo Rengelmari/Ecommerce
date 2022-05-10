@@ -1,0 +1,33 @@
+@import "./variables";
+
+.headerLogo{
+    display: none;
+}
+header{
+    grid-area: nav;
+    display: flex;
+    background-color: $color-background;
+    justify-content: start;
+    align-items: center;
+    }
+.carrito {
+    fill:white;
+    width: 50px;
+    height: 18px;
+    margin-left: 27rem;
+}
+@media screen and (min-width: 576px) {
+    .headerLogo {
+        width: 70px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+    header{
+        justify-content: space-around;
+        display: flex;
+    }
+    .carrito {
+        margin-left: 0rem;
+    }
+}
