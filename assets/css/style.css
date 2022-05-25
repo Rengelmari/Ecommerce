@@ -74,6 +74,9 @@ footer {
   margin-bottom: 1rem;
   fill: white; }
 
+.footer__text {
+  justify-self: center; }
+
 @font-face {
   font-family: "Simonetta Regular";
   src: url(./../fonts/Simonetta-Regular.ttf); }
@@ -184,7 +187,8 @@ div strong {
   width: 100%;
   height: 70%;
   transition: opacity 1.5s ease-in-out;
-  position: absolute; }
+  position: absolute;
+  box-shadow: 0 0 25px 0 #838383; }
   .product__image.top:hover {
     opacity: 0; }
 

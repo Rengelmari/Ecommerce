@@ -20,11 +20,13 @@ footer {
 .footer__icon {
     height: 35px;   
     width: 35px;    
-
 }
 .redes {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1rem;
     fill: white;
+}
+.footer__text {
+    justify-self: center;
 }
