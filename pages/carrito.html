@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selecciona el tema que mejor describa consulta, luego completarás un formulario con los detalles específicos">
-    <meta name="keywords" content="contactanos, consultas, pedidos, reclamo">
     <link rel="shortcut icon" href="../assets/img/logo.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Contáctanos</title>
+    <script src="../assets/js/app.js"></script>
+    <title>Cesta de compra</title>
 </head>
 <body>
     <header>
@@ -37,7 +36,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="contacto.html">CONTACTO</a>
+                    <a class="nav-link" href="contacto.html">CONTACTO</a>
                   </li>
                 </ul>
               </div>
@@ -50,36 +49,178 @@
             </svg>
         </a>
    </header>
-   <section>
-      <h1 class="tituloPagina">CONTÁCTANOS</h1>
-      <form class="row g-3 formulario">
-        <div class="col-md-6">
-          <label for="inputNombre3" class="form-label">Nombre</label>
-          <input type="nombre" class="form-control" id="inputNombre3">
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail3" class="form-label">Mail</label>
-          <input type="email" class="form-control" id="inputEmail3">
-        </div>
-        <div class="col-md-6">
-            <label class="inputCons" for="form-label">Tipo de consulta</label>
-            <select class="form-select flex-nowrap" id="inputCons">
-              <option selected>Selecione</option>
-              <option value="1">Estado de pedido</option>
-              <option value="2">Consulta</option>
-              <option value="3">Reclamo</option>
-            </select>
-        </div>
-        <div class="col-12">
-            <label for="inputComent" class="form-label">Comentario</label>
-            <input type="text" class="form-control coment" id="inputComent">
+   <h1 class="tituloPagina">Finalizar compra</h1>
+<section>
+
+    <div class="container">
+        <main>
+
+          <div class="row g-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-dark">Cesta de compra</span>
+                <span class="badge bg-dark rounded-pill">3</span>
+              </h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">Product name</h6>
+                    <small class="text-muted">Brief description</small>
+                  </div>
+                  <span class="text-muted">$12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">Second product</h6>
+                    <small class="text-muted">Brief description</small>
+                  </div>
+                  <span class="text-muted">$8</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0">Third item</h6>
+                    <small class="text-muted">Brief description</small>
+                  </div>
+                  <span class="text-muted">$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between bg-light">
+                  <div class="text-success">
+                    <h6 class="my-0">Promo code</h6>
+                    <small>EXAMPLECODE</small>
+                  </div>
+                  <span class="text-success">−$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Total (USD)</span>
+                  <strong>$20</strong>
+                </li>
+              </ul>
+      
+              <form class="card p-2 formulario">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Promo code">
+                  <button type="submit" class="btn btn-dark">Validar</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-7 col-lg-8">
+              <form class="needs-validation" novalidate="">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                  </div>
+      
+                  <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                  </div>
+      
+                  
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="">
+                  </div>
+      
+                  <div class="col-12">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="address" placeholder="" required="">
+                  </div>
+      
+      
+                  <div class="col-md-5">
+                    <label for="country" class="form-label">Ciudad</label>
+                    <select class="form-select" id="country" required="">
+                      <option value="">Seleccione</option>
+                      <option>CABA</option>
+                    </select>
+                  </div>
+      
+                  <div class="col-md-4">
+                    <label for="state" class="form-label">Provincia</label>
+                    <select class="form-select" id="state" required="">
+                      <option value="">Seleccione</option>
+                      <option>Capital Federal</option>
+                    </select>
+                  </div>
+      
+                  <div class="col-md-3">
+                    <label for="zip" class="form-label">Código Postal</label>
+                    <input type="text" class="form-control" id="zip" placeholder="" required="">
+                  </div>
+                </div>
+      
+
+                <div class="infoFacturacion">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="same-address">
+                        <label class="form-check-label" for="same-address">La dirección de facturación es igual a la de envío</label>
+                      </div>
+            
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="save-info">
+                        <label class="form-check-label" for="save-info">Quiero recibir información y promociones</label>
+                      </div>
+                </div>
+
+      
+                <div class="">
+                    <h4 class="mb-3">Información de Pago</h4>
+                
+                    <div class="my-3">
+                      <div class="form-check">
+                        <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                        <label class="form-check-label" for="credit">Tarjeta de crédito</label>
+                      </div>
+                      <div class="form-check">
+                        <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                        <label class="form-check-label" for="debit">Tarjeta de débito</label>
+                      </div>
+                    </div>
+          
+                    <div class="row gy-3">
+                      <div class="col-md-6">
+                        <label for="cc-name" class="form-label">Titular de la tarjeta</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <div class="invalid-feedback">
+                          Titular de la tarjeta requerido
+                        </div>
+                      </div>
+          
+                      <div class="col-md-6">
+                        <label for="cc-number" class="form-label">Número de tarjeta</label>
+                        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                        <div class="invalid-feedback">
+                          Núemro de tarjeta requerido
+                        </div>
+                      </div>
+          
+                      <div class="col-md-3">
+                        <label for="cc-expiration" class="form-label">Fecha de Vencimiento</label>
+                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                        <div class="invalid-feedback">
+                          Fecha de expiración requerida
+                        </div>
+                      </div>
+          
+                      <div class="col-md-3">
+                        <label for="cc-cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                        <div class="invalid-feedback">
+                          Código de seguridad requerido
+                        </div>
+                      </div>
+                    </div>     
+                    <button class="w-100 btn btn-dark btn-lg botonPagar" type="submit">Pagar</button>
+                </div>
+                
+              </form>
+            </div>
           </div>
-        <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-dark">Enviar</button>
-        </div>
-      </form>
-    </section>
-  <footer class="bg-dark text-center text-white">
+        </main>
+
+</section>
+<footer class="bg-dark text-center text-white">
     <div class="container p-4 mb-4">
         <div class="redes">
             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-instagram footer__icon botonInstagram" viewBox="0 0 16 16">
@@ -121,7 +262,11 @@
     <div class="footer__text">
         <p>© 2020 Copyright</p>
     </div>
-  </footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+

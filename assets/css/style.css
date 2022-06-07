@@ -348,4 +348,10 @@ form {
     align-self: center;
     text-align: justify;
     border-right-style: groove;
-    font-family: "Galdeano Regular"; } }
+    font-family: "Galdeano Regular"; }
+  .infoFacturacion {
+    padding-top: 1rem;
+    padding-bottom: 2.5rem; }
+  .botonPagar {
+    margin-bottom: 5rem;
+    margin-top: 1rem; } }
