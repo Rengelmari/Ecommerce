@@ -5,7 +5,7 @@ let tasa = 2
 let iva = 1.21
 let totalCuota
 let cantArticulos
-
+let itemDesc
 
 function sumaArticulos(cantArticulos) {
     if (cantArticulos >= 1) {
@@ -42,8 +42,9 @@ class articulo {
 }
 
 const productos = [
-    new articulo(1, "Aros luna", 5000),
-    new articulo(2, "Aros sol", 5000)
+    new articulo(1, "Aros luna", 2500),
+    new articulo(2, "Aros sol", 3000),
+    new articulo(3, "Pendiente Landscape", 5000)
 ]
 
 function agregarArticulo () {
@@ -56,23 +57,32 @@ function agregarArticulo () {
 
 function desicion(comprar) {
     if (comprar == 'si') { 
+        itemDesc = prompt(`Ingrese la descripción del producto que desea comprar`)
+        const buscar = productos.find( (articulo) => articulo.descripcion === itemDesc)
         cantArticulos = Number( prompt('Ingrese la cantidad de articulos a comprar'))
         let cuotas = Number( prompt('Ingrese en cuantas cuotas desea pagar'))
         sumaArticulos(cantArticulos)
         valorCuotas(cuotas)
     }
     else {
-        alert('Ingrese productos a la base')
-        agregarArticulo()
-        for (const item of productos) {
-            console.log(item)
+        let desicion= prompt(`Desea ingresar productos a la base?`)
+        if (desicion == `si`) {
+            alert('Ingrese productos a la base')
+            agregarArticulo()
+            for (const item of productos) {
+                console.log(item)
+            }
+        }
+        else {
+            let parametroBusq = prompt(`Ingrese que tipo de productos desea filtrar`)
+            const lista = productos.filter ( (articulo) => articulo.descripcion.includes (parametroBusq) )
+            console.log(lista)
         }
     }
 }
 
 let comprar = prompt('Desea comprar un artículo?')
 desicion(comprar)
-
 
 
 
