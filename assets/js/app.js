@@ -1,5 +1,6 @@
 const productsContainer = document.querySelector('#landscapeGaleria')
 const productsCesta = document.querySelector('#cestaContenedora')
+const contadorCesta = document.querySelector('#contadorCesta')
 
 BBDD.forEach ((item) => {
     const div = document.createElement('div')
@@ -23,22 +24,46 @@ const sumarCesta = (id) => {
     cesta.push(producto)
     console.log(cesta)
     renderCesta()
+    renderContCesta()
+    renderTotalCesta()
 }
 
 const renderCesta = () => {
-    cesta.forEach((producto) =>{
+
+    cesta.forEach ((producto) => {
+        productsCesta.innerHTML = ``
+
         const div = document.createElement('div')
         div.classList.add('list-group-item d-flex justify-content-between lh-sm')
         div.innerHTML = `
                 <div>
-                    <h6 class="my-0">${producto.alt}</h6>
+                    <h6 class="my-0">${producto.descripcion}</h6>
                 </div>
                 <span class="text-muted">$${producto.precio}</span>
         `
         productsCesta.append(div)
     })
-
 }
+
+const renderContCesta = () => {
+    contadorCesta.innerText = cesta.length
+}
+
+const totalCesta = document.querySelector('#totalCesta')
+
+const renderTotalCesta = () => {
+    let total = 0
+    cesta.forEach ((producto) => { 
+        total += producto.precio
+    })
+    totalCesta.innerText = total
+}
+
+
+
+
+
+
 
 /* let subTotal = 0
 let total = 0
