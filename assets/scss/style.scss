@@ -24,7 +24,14 @@ body {
 .tracking-in-expand {
     animation: tracking-in-expand 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
-
+#cestaContenedora {
+    list-style: none;
+    flex-direction: column;
+}
+.text-muted {
+    display: flex;
+    flex-flow: row-reverse
+}
 .gridContainer {
     display: grid;
     grid-template-areas: 

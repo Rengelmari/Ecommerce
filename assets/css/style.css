@@ -100,6 +100,14 @@ body {
 .tracking-in-expand {
   animation: tracking-in-expand 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both; }
 
+#cestaContenedora {
+  list-style: none;
+  flex-direction: column; }
+
+.text-muted {
+  display: flex;
+  flex-flow: row-reverse; }
+
 .gridContainer {
   display: grid;
   grid-template-areas: "nav nav" "ini ini" "colec colec" "land land" "nat nat" "foot foot";
