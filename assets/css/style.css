@@ -77,6 +77,9 @@ footer {
 .footer__text {
   justify-self: center; }
 
+.footerContainer {
+  display: contents; }
+
 @font-face {
   font-family: "Simonetta Regular";
   src: url(./../fonts/Simonetta-Regular.ttf); }
